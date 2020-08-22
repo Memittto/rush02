@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 	}
 	else if (argc == 3)
 	{
-		if (argv[1] == "add")
+		if (ft_strcmp(argv[1], "add"))
 		{
 			if (ft_add_to_dict(argv[2]))
 				return (0);
@@ -22,12 +22,12 @@ int main(int argc, char **argv)
 			// ajouter une entree
 			// argv 2 est la valeur par exemple "4: four\n"
 		}
-		else if (argv[1] == "numbers.dict")
+		else if (ft_strcmp(argv[1], "numbers.dict"))
 		{
 			// aller hercher la valeur dans ce dict
 			// argv 2 est la valeur a cherche
 		}
-		else if (argv[1] == "fr.dict")
+		else if (ft_strcmp(argv[1], "fr.dict"))
 		{
 			// aller chercher dans le dictionnaire du meme nom
 			// argv 2 est la valeur
