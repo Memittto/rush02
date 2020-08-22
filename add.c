@@ -1,3 +1,7 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "proto.h"
+
 /*
 	Ft_add_to_it() 
 	On recupere la chaine str;
@@ -7,19 +11,61 @@
 */
 
 /*
-	
+	ft_verif_add()
+	Doit verifier qu'il y a bien un id, une value et un dict
+	Verifier que le dict exist
+	Verifier que l'id n'existe pas encore dans le dict en question
 */
 
-int		ft_add_to_dict(char *str)
+int 	ft_size_dict(char *str)
 {
-	if (ft_verif_add(char *str))
+	int		i;
+	int		x;
+
+	i = 0;
+	x = 0;
+	while (str[i] != ';')
+		i++;
+	x = i;
+	while (str[i])
 	{
-		
+		x++;
+		i++;
 	}
-	return (1);
+	return (x);
 }
 
 int		ft_verif_add(char *str)
 {
+	(void) str;
 	return (1);
+}
+
+int		ft_add_to_dict(char *str)
+{
+	//char	*id;
+	//char	*value;
+	char	*dict;
+	int		i;
+	int		x;
+
+	if (ft_verif_add(str))
+	{
+			// Get Dict
+			if (!(dict = malloc((ft_size_dict(str) + 1) * sizeof(char))))
+				return (0);
+			i = ft_strlen(str) - ft_size_dict(str);
+			x = 0;
+			while (i <= ft_strlen(str))
+			{
+				dict[x] = str[i];
+				i++;
+				x++;
+			}
+			printf("dict %s \n", dict);
+			return (1);
+			// Write Value
+
+	}
+	return (0);
 }

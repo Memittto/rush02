@@ -13,17 +13,18 @@ int main(int argc, char **argv)
 	}
 	else if (argc == 3)
 	{
-		if (argv[1] = "add")
+		if (argv[1] == "add")
 		{
 			if (ft_add_to_dict(argv[2]))
 				return (0);
 			write(1, "Error\n", 6);
+			return (0);
 			// ajouter une entree
 			// argv 2 est la valeur par exemple "4: four\n"
 		}
 		else if (argv[1] == "numbers.dict")
 		{
-			// aller chercher la valeur dans ce dict
+			// aller hercher la valeur dans ce dict
 			// argv 2 est la valeur a cherche
 		}
 		else if (argv[1] == "fr.dict")
