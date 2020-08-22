@@ -6,28 +6,28 @@
 /*   By: sserbin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 19:19:51 by sserbin           #+#    #+#             */
-/*   Updated: 2020/08/22 19:20:30 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/08/22 19:30:56 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "proto.h"
 
 /*
-	Ft_add_to_it() 
-	On recupere la chaine str;
-	Il faut verifier qu'elle soit au bon format, sinon on return 0 pour erreur;
-	Si c'est ok alors on l'ajout a notre dict
-	Mais le truc c'est qu'il faut aussi gerer quelle dictionnaire
+Ft_add_to_it()
+On recupere la chaine str;
+Il faut verifier qu'elle soit au bon format, sinon on return 0 pour erreur;
+Si c'est ok alors on l'ajout a notre dict
+Mais le truc c'est qu'il faut aussi gerer quelle dictionnaire
 */
 
 /*
-	ft_verif_add()
-	Doit verifier qu'il y a bien un id, une value et un dict
-	Verifier que le dict exist
-	Verifier que l'id n'existe pas encore dans le dict en question
+ft_verif_add()
+Doit verifier qu'il y a bien un id, une value et un dict
+Verifier que le dict exist
+Verifier que l'id n'existe pas encore dans le dict en question
 */
 
-int 	ft_size_dict(char *str)
+int		ft_size_dict(char *str)
 {
 	int		i;
 	int		x;
@@ -47,7 +47,7 @@ int 	ft_size_dict(char *str)
 
 int		ft_verif_add(char *str)
 {
-	(void) str;
+	(void)str;
 	return (1);
 }
 
@@ -71,41 +71,37 @@ int		ft_add_to_dict(char *str)
 
 	if (ft_verif_add(str))
 	{
-			// Get Dict
-			if (!(dict = malloc((ft_size_dict(str) + 1) * sizeof(char))))
-				return (0);
-			i = ft_strlen(str) - ft_size_dict(str);
-			x = 0;
-			while (i <= ft_strlen(str))
-			{
-				dict[x] = str[i];
-				i++;
-				x++;
-			}
-			dict[x] = '\0';
-
-			// Get item to write
-			if (!(value = malloc(sizeof(char) * (ft_strlen(str) - ft_size_dict(str) + 1))))
-				return (0);
-			i = 0;
-			while (str[i] != ';')
-			{
-				value[i] = str[i];
-				i++;
-			}
-			value[i] = '\n';
-			value[i + 1] = '\0';
-			
-			// Write
-			fd = open(dict, O_RDWR | O_APPEND | O_CREAT, S_IRUSR | S_IWUSR);
-			if (fd == -1)
-			{
-				write(1, "Error\n", 6);
-				return (0);
-			}
-			ft_putstr(fd, value);
-			close(fd);
-			return (1);
+		if (!(dict = malloc((ft_size_dict(str) + 1) * sizeof(char))))
+			return (0);
+		i = ft_strlen(str) - ft_size_dict(str);
+		x = 0;
+		while (i <= ft_strlen(str))
+		{
+			dict[x] = str[i];
+			i++;
+			x++;
+		}
+		dict[x] = '\0';
+		if (!(value = malloc(sizeof(char)
+						* (ft_strlen(str) - ft_size_dict(str) + 1))))
+			return (0);
+		i = 0;
+		while (str[i] != ';')
+		{
+			value[i] = str[i];
+			i++;
+		}
+		value[i] = '\n';
+		value[i + 1] = '\0';
+		fd = open(dict, O_RDWR | O_APPEND | O_CREAT, S_IRUSR | S_IWUSR);
+		if (fd == -1)
+		{
+			write(1, "Error\n", 6);
+			return (0);
+		}
+		ft_putstr(fd, value);
+		close(fd);
+		return (1);
 	}
 	return (0);
 }
