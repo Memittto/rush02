@@ -86,7 +86,7 @@ int		ft_add_to_dict(char *str)
 				i++;
 			}
 			value[i] = '\0';
-			
+			printf("%s - %s", dict, value);
 			return (1);
 	}
 	return (0);
