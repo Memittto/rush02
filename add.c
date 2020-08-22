@@ -26,13 +26,13 @@ int 	ft_size_dict(char *str)
 	x = 0;
 	while (str[i] != ';')
 		i++;
-	x = i;
+	x = 0;
 	while (str[i])
 	{
 		x++;
 		i++;
 	}
-	return (x);
+	return (x - 1);
 }
 
 int		ft_verif_add(char *str)
@@ -56,6 +56,7 @@ int		ft_add_to_dict(char *str)
 				return (0);
 			i = ft_strlen(str) - ft_size_dict(str);
 			x = 0;
+			printf("i %d - len %d * size dict %d \n", i, ft_strlen(str), ft_size_dict(str));
 			while (i <= ft_strlen(str))
 			{
 				dict[x] = str[i];
