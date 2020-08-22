@@ -6,7 +6,7 @@
 /*   By: gcornet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 17:01:26 by gcornet-          #+#    #+#             */
-/*   Updated: 2020/08/22 17:21:41 by gcornet-         ###   ########.fr       */
+/*   Updated: 2020/08/22 18:54:46 by gcornet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define FT_H
 
 void	ft_putnbr(int nb);
-
 void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		word_counter(char *str);
 
 #endif

@@ -6,12 +6,13 @@
 /*   By: gcornet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 12:40:07 by gcornet-          #+#    #+#             */
-/*   Updated: 2020/08/22 17:19:21 by gcornet-         ###   ########.fr       */
+/*   Updated: 2020/08/22 19:07:22 by gcornet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -19,28 +20,46 @@
 
 #define BUF_SIZE 4096
 
-char	**ft_split(char *str, char *charset);
-
+char	**ft_split(char *str);
 void	ft_putnbr(int nb);
-
 void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		word_counter(char *str);
+
 
 int main()
 {
 	int fd;
 	char buf[BUF_SIZE + 1];
-	int ret;
-	char *file = "numbers.dict.txt";
-	fd = open(file, O_RDWR);
+	char **mat;
+	int i;
+
+	i = 0;
+	fd = open("numbers.dict.txt", O_RDWR);
 	if (fd == -1)
 	{
 		printf("Open() error\n");
 		return (1);
 	}
-	ret = read(fd, buf, BUF_SIZE);
-	buf[ret] = '\0';
-	ft_putnbr(ret);
-	ft_putstr(buf);
+
+	read(fd, buf, BUF_SIZE);
+	buf[ft_strlen(buf)] = '\0';
+//	ft_putstr(buf);
+	
+	if (!(mat = malloc(sizeof(char*) * (word_counter(buf) + 1))))
+		return (0);
+
+	mat = ft_split(buf);
+	mat[word_counter(buf)] = NULL;
+
+	while (i < word_counter(buf))
+	{
+		printf("%s \n", mat[i]);
+		//ft_putstr(mat[i]);
+		//ft_putstr("\n");
+		i++;
+	}
+
 	if (close(fd) == -1)
 	{
 		ft_putstr("close() error\n");

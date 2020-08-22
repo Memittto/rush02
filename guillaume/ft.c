@@ -34,3 +34,35 @@ void	ft_putstr(char *str)
 	}
 }
 
+int		ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+int		word_counter(char *str)
+{
+	int		counter;
+	int		i;
+	int		word;
+
+	counter = 0;
+	i = 0;
+	word = 0;
+	while (str[i])
+	{
+		if (str[i] == '\n')
+			word = 0;
+		else if (word == 0)
+		{
+			word = 1;
+			counter++;
+		}
+		i++;
+	}
+	return (counter);
+}
