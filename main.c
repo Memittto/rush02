@@ -6,7 +6,7 @@
 /*   By: sserbin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 19:20:37 by sserbin           #+#    #+#             */
-/*   Updated: 2020/08/22 19:20:40 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/08/23 12:11:35 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 #include "proto.h"
 
 int main(int argc, char **argv)
-
+{
 	if (argc == 2)
 	{
 		// Dict de base
 		// argv 1 est la valeur que l'on veut get
+		on_aura_pas_0(argc, argv);
 	}
 	else if (argc == 3)
 	{
@@ -30,8 +31,6 @@ int main(int argc, char **argv)
 				return (0);
 			write(1, "Error\n", 6);
 			return (0);
-			// ajouter une entree
-			// argv 2 est la valeur par exemple "4: four\n"
 		}
 		else if (ft_strcmp(argv[1], "numbers.dict") == 0)
 		{

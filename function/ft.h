@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sserbin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: gcornet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/22 19:20:54 by sserbin           #+#    #+#             */
-/*   Updated: 2020/08/23 12:33:38 by sserbin          ###   ########.fr       */
+/*   Created: 2020/08/22 17:01:26 by gcornet-          #+#    #+#             */
+/*   Updated: 2020/08/23 12:18:48 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../proto.h"
+#ifndef FT_H
+# define FT_H
 
-void	ft_putstr_file(int fd, char *str)
-{
-	write(fd, str, ft_strlen(str));
-}
+void	ft_putnbr(int nb);
+void	ft_putstr(char *str);
+int		word_counter(char *str);
+int		ft_check_if(char *str, char *tf);
+int		ft_len_index(char *str);
+char	*ft_clean(char *str, char *rendu);
+
+#endif

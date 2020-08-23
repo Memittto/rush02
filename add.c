@@ -6,7 +6,7 @@
 /*   By: sserbin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 19:19:51 by sserbin           #+#    #+#             */
-/*   Updated: 2020/08/22 19:30:56 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/08/23 12:34:42 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int		ft_add_to_dict(char *str)
 			write(1, "Error\n", 6);
 			return (0);
 		}
-		ft_putstr(fd, value);
+		ft_putstr_file(fd, value);
 		close(fd);
 		return (1);
 	}

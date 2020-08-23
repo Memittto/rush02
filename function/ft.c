@@ -1,6 +1,4 @@
-
-#include <unistd.h>
-#include "ft.h"
+#include "../proto.h"
 
 void	ft_putnbr(int nb)
 {
@@ -19,6 +17,18 @@ void	ft_putnbr(int nb)
 		}
 		nb = nb % 10 + 48;
 		write(1, &nb, 1);
+	}
+}
+
+void	ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
 	}
 }
 
