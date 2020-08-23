@@ -6,7 +6,7 @@
 /*   By: sserbin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 19:20:44 by sserbin           #+#    #+#             */
-/*   Updated: 2020/08/23 12:34:06 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/08/23 13:16:30 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,17 @@ int		word_counter(char *str);
 int		ft_check_if(char *str, char *tf);
 int		ft_len_index(char *str);
 char	*ft_clean(char *str, char *rendu);
-
+int		ft_atoi(char *s);
+int		size_num(int nb);
+void	engine(char *str, int n);
+char	*ft_itoa(int n);
+char	*ft_strdup(char *src);
+char	*ft_strstr(char *str, char *need);
+int		ft_strlen(char *str);
+int 	is_space(char c);
+int 	is_num(char c);
+void 	ft_putchar(char c);
+void 	ft_putstr(char *str);
+int		verif(char *str);
 
 #endif
