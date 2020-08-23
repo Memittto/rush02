@@ -6,7 +6,7 @@
 /*   By: cjullien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 21:57:35 by cjullien          #+#    #+#             */
-/*   Updated: 2020/08/22 19:24:19 by gcornet-         ###   ########.fr       */
+/*   Updated: 2020/08/23 11:55:29 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	**splitter(char *str, char **tab, int word_len)
 			j++;
 		while (str[j++] && str[j] != '\n')
 			word_len++;
-		if (!(tab[k] = malloc(sizeof(char) * word_len + 1)))
+		if (!(tab[k] = malloc(sizeof(char) * word_len + 2)))
 			return (0);
 		l = -1;
 		while (++l <= word_len)
