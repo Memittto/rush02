@@ -37,16 +37,9 @@ char	**splitter(char *str, char **tab, int word_len)
 		while (++l <= word_len)
 			tab[k][l] = str[l + j - word_len - 1];
 		tab[k][l] = '\0';
-		printf("***%s\n", tab[k]);
 		k++;
 	}
 	tab[k] = "\0";
-	int i= 0;
-	while (i < word_counter(str))
-	{
-		printf("---%s\n", tab[i]);
-		i++;
-	}
 	return (tab);
 }
 

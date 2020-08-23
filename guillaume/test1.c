@@ -27,8 +27,14 @@ int		ft_strlen(char *str);
 int		word_counter(char *str);
 
 
-int main()
+int main(int argc, char **argv)
 {
+	if (argc != 2)
+	{
+		write(1, "Error\n", 6);
+		return (0);
+	}
+
 	int fd;
 	char buf[BUF_SIZE + 1];
 	char **mat;
@@ -45,7 +51,7 @@ int main()
 	read(fd, buf, BUF_SIZE);
 	buf[ft_strlen(buf)] = '\0';
 //	ft_putstr(buf);
-	
+
 	if (!(mat = malloc(sizeof(char*) * (word_counter(buf) + 1))))
 		return (0);
 
@@ -54,6 +60,7 @@ int main()
 
 	while (i < word_counter(buf))
 	{
+		if (ft_check_if(mat[i], argv[1]))
 		printf("%s \n", mat[i]);
 		//ft_putstr(mat[i]);
 		//ft_putstr("\n");
