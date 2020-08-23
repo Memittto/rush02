@@ -6,7 +6,7 @@
 /*   By: sserbin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 19:20:44 by sserbin           #+#    #+#             */
-/*   Updated: 2020/08/23 13:16:30 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/08/23 14:41:36 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ int 	is_num(char c);
 void 	ft_putchar(char c);
 void 	ft_putstr(char *str);
 int		verif(char *str);
+char	**ft_split(char *str);
+int		word_counter(char *str);
 
 #endif

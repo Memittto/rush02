@@ -6,13 +6,10 @@
 /*   By: sserbin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 19:20:37 by sserbin           #+#    #+#             */
-/*   Updated: 2020/08/23 13:22:15 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/08/23 14:40:48 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
 #include "proto.h"
 
 int main(int argc, char **argv)

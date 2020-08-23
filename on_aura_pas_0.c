@@ -6,7 +6,7 @@
 /*   By: gcornet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 12:40:07 by gcornet-          #+#    #+#             */
-/*   Updated: 2020/08/23 12:36:55 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/08/23 14:40:26 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 #include <fcntl.h>
 #include "proto.h"
 
-#define BUF_SIZE 4096
+#define BUF_SIZE 10001
 
-char	**ft_split(char *str);
-void	ft_putnbr(int nb);
-void	ft_putstr(char *str);
-int		ft_strlen(char *str);
-int		word_counter(char *str);
+//char	**ft_split(char *str);
+//void	ft_putnbr(int nb);
+//void	ft_putstr(char *str);
+//int		ft_strlen(char *str);
+//int		word_counter(char *str);
 
 
 int on_aura_pas_0(int argc, char **argv)
@@ -75,8 +75,10 @@ int on_aura_pas_0(int argc, char **argv)
 		i++;
 	}
 	if (!find)
+	{
+		printf("atoi %d \n", ft_atoi(argv[1]));
 		write(1, "Dict Error\n", 11);
-
+	}
 	if (close(fd) == -1)
 	{
 		ft_putstr("close() error\n");
