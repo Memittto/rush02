@@ -69,6 +69,7 @@ int main(int argc, char **argv)
 			ft_clean(mat[i], rendu);
 			write(1, rendu, ft_strlen(rendu));
 			write(1, "\n", 1);
+			free(rendu);
 			find = 1;
 			break;
 		}
