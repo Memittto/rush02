@@ -6,7 +6,7 @@
 /*   By: sserbin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 19:20:37 by sserbin           #+#    #+#             */
-/*   Updated: 2020/08/23 15:07:42 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/08/23 15:50:48 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 			write(1, "Error\n", 6);
 			return (0);
 		}
-		read_dico(argc, argv);
+		read_dico(argv[1]);
 	}
 	else if (argc == 3)
 	{

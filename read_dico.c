@@ -6,7 +6,7 @@
 /*   By: gcornet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 12:40:07 by gcornet-          #+#    #+#             */
-/*   Updated: 2020/08/23 15:07:29 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/08/23 15:50:08 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,8 @@
 
 #define BUF_SIZE 10001
 
-int read_dico(int argc, char **argv)
+int read_dico(char *str)
 {
-	if (argc != 2)
-	{
-		write(1, "Error\n", 6);
-		return (0);
-	}
-
 	int 	fd;
 	char 	buf[BUF_SIZE + 1];
 	char 	**mat;
@@ -55,7 +49,7 @@ int read_dico(int argc, char **argv)
 	find = 0;
 	while (i < word_counter(buf))
 	{
-		if (ft_check_if(mat[i], argv[1]))
+		if (ft_check_if(mat[i], str))
 		{
 			rendu = malloc(sizeof(char) * (ft_strlen(mat[i]) + 1));
 			ft_clean(mat[i], rendu);
@@ -69,7 +63,7 @@ int read_dico(int argc, char **argv)
 	}
 	if (!find)
 	{
-		printf("res %s \n", ft_algo(argv[1], ft_atoi(argv[1])));
+		printf("res %s \n", ft_algo(str, ft_atoi(str)));
 		write(1, "Dict Error\n", 11);
 	}
 	if (close(fd) == -1)
