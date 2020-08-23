@@ -6,7 +6,7 @@
 /*   By: gcornet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 12:40:07 by gcornet-          #+#    #+#             */
-/*   Updated: 2020/08/23 15:50:08 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/08/23 16:43:30 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int read_dico(char *str)
 	}
 	if (!find)
 	{
-		printf("res %s \n", ft_algo(str, ft_atoi(str)));
-		write(1, "Dict Error\n", 11);
+		if(!ft_algo(str))
+			write(1, "Dict Error\n", 11);
 	}
 	if (close(fd) == -1)
 	{

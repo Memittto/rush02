@@ -6,7 +6,7 @@
 /*   By: sserbin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/23 14:52:45 by sserbin           #+#    #+#             */
-/*   Updated: 2020/08/23 15:56:30 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/08/23 16:44:47 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,22 +71,23 @@ void ft_search_and_print(int nbr, int i)
 
 	nb = malloc(sizeof(char) * 100);
 	nb = ft_itoa(nbr * ft_puissance(i));
-	printf("* %s", nb);
-	printf("\n");
-	printf("=> %s \n", ft_give_data(nb));
+	write(1, ft_give_data(nb), ft_strlen(ft_give_data(nb)));
 }
 
-char *ft_algo(char *dico, int nbr)
+int ft_algo(char *str)
 {
 	int		i;
+	int		size;
 
-	(void)dico;
+	size = ft_strlen(str);
 	i = 0;
-	while (nbr >= 1)
+	while (str[i])
 	{
-		ft_search_and_print(nbr % 10, i);
-		nbr = nbr / 10;
+		ft_search_and_print((str[i] - 48), size - i - 1);
 		i++;
+		if (str[i] != '\0')
+			write(1, "-", 1);
 	}
-	return ("OK");
+	write(1, "\n", 1);
+	return (1);
 }

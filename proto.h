@@ -6,7 +6,7 @@
 /*   By: sserbin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 19:20:44 by sserbin           #+#    #+#             */
-/*   Updated: 2020/08/23 15:51:39 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/08/23 16:44:14 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ void 	ft_putstr(char *str);
 int		verif(char *str);
 char	**ft_split(char *str);
 int		word_counter(char *str);
-char	*ft_algo(char *dico, int nbr);
+int		ft_algo(char *str);
 
 #endif
