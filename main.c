@@ -6,7 +6,7 @@
 /*   By: sserbin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 19:20:37 by sserbin           #+#    #+#             */
-/*   Updated: 2020/08/23 13:15:48 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/08/23 13:22:15 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ int main(int argc, char **argv)
 		// Dict de base
 		// argv 1 est la valeur que l'on veut get
 		if (!verif(argv[1]))
+		{
+			write(1, "Error\n", 6);
+			return (0);
+		}
+		if (!(argv[1] = ft_strdup(ft_itoa(ft_atoi(argv[1])))))
 		{
 			write(1, "Error\n", 6);
 			return (0);
