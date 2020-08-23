@@ -6,7 +6,7 @@
 /*   By: gcornet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 12:40:07 by gcornet-          #+#    #+#             */
-/*   Updated: 2020/08/23 14:40:26 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/08/23 15:07:29 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,7 @@
 
 #define BUF_SIZE 10001
 
-//char	**ft_split(char *str);
-//void	ft_putnbr(int nb);
-//void	ft_putstr(char *str);
-//int		ft_strlen(char *str);
-//int		word_counter(char *str);
-
-
-int on_aura_pas_0(int argc, char **argv)
+int read_dico(int argc, char **argv)
 {
 	if (argc != 2)
 	{
@@ -76,7 +69,7 @@ int on_aura_pas_0(int argc, char **argv)
 	}
 	if (!find)
 	{
-		printf("atoi %d \n", ft_atoi(argv[1]));
+		printf("res %s \n", ft_algo(argv[1], ft_atoi(argv[1])));
 		write(1, "Dict Error\n", 11);
 	}
 	if (close(fd) == -1)
