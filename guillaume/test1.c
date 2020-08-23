@@ -39,6 +39,7 @@ int main(int argc, char **argv)
 	char buf[BUF_SIZE + 1];
 	char **mat;
 	int i;
+	int find;
 
 	i = 0;
 	fd = open("numbers.dict.txt", O_RDWR);
@@ -58,14 +59,23 @@ int main(int argc, char **argv)
 	mat = ft_split(buf);
 	mat[word_counter(buf)] = NULL;
 
+	find = 0;
 	while (i < word_counter(buf))
 	{
 		if (ft_check_if(mat[i], argv[1]))
-		printf("%s \n", mat[i]);
+		{
+			write(1, mat[i], ft_strlen(mat[i]));
+			write(1, "\n", 1);
+			find = 1;
+			break;
+		}
+		// printf("%s \n", mat[i]);
 		//ft_putstr(mat[i]);
 		//ft_putstr("\n");
 		i++;
 	}
+	if (!find)
+		write(1, "Dict Error\n", 11);
 
 	if (close(fd) == -1)
 	{
