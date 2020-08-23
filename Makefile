@@ -6,12 +6,12 @@
 #    By: sserbin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/22 19:19:31 by sserbin           #+#    #+#              #
-#    Updated: 2020/08/23 12:28:30 by sserbin          ###   ########.fr        #
+#    Updated: 2020/08/23 14:53:56 by sserbin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 all:
-	gcc -Wall -Wextra -Werror *.c function/*.c
+	gcc -Wall -Wextra -Werror *.c function_folder/*.c
 clean:
 	rm -f ./a.out
 	rm -f *.c~
