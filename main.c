@@ -19,8 +19,6 @@ int main(int argc, char **argv)
 {
 	if (argc == 2)
 	{
-		// Dict de base
-		// argv 1 est la valeur que l'on veut get
 		if (!verif(argv[1]))
 		{
 			write(1, "Error\n", 6);
