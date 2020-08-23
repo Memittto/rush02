@@ -35,11 +35,12 @@ int main(int argc, char **argv)
 		return (0);
 	}
 
-	int fd;
-	char buf[BUF_SIZE + 1];
-	char **mat;
-	int i;
-	int find;
+	int 	fd;
+	char 	buf[BUF_SIZE + 1];
+	char 	**mat;
+	int 	i;
+	int 	find;
+	char	*rendu;
 
 	i = 0;
 	fd = open("numbers.dict.txt", O_RDWR);
@@ -64,7 +65,9 @@ int main(int argc, char **argv)
 	{
 		if (ft_check_if(mat[i], argv[1]))
 		{
-			write(1, mat[i], ft_strlen(mat[i]));
+			rendu = malloc(sizeof(char) * (ft_strlen(mat[i]) + 1));
+			ft_clean(mat[i], rendu);
+			write(1, rendu, ft_strlen(rendu));
 			write(1, "\n", 1);
 			find = 1;
 			break;

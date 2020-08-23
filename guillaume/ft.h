@@ -19,4 +19,6 @@ int		ft_strlen(char *str);
 int		word_counter(char *str);
 int		ft_check_if(char *str, char *tf);
 int		ft_len_index(char *str);
+char	*ft_clean(char *str, char *rendu);
+
 #endif
